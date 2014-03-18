@@ -16,8 +16,8 @@ define clock::tz (
     
     file { '/etc/localtime': 
       ensure => present, 
-      owner => 'root', 
-      group => 'root', 
+      owner  => 'root', 
+      group  => 'root', 
       mode   => '0644', 
       source => "$prefix/$timezone",
     }
