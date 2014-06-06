@@ -2,7 +2,18 @@ Puppet::Type.newtype(:timezone) do
   @doc = "Configure timezone."
 
   ensurable
- 
+
+  def munge_boolean(value)
+    case value
+    when true, "true", :true
+      :true
+    when false, "false", :false
+      :false
+    else
+      fail("munge_boolean only takes booleans")
+    end
+  end
+
   newparam(:zone) do
     desc "Timezone"
 
@@ -19,14 +30,24 @@ Puppet::Type.newtype(:timezone) do
   newparam(:utc) do
     desc "Host set to UTC?"
 
-    newvalues(:true, :false)
+    newvalue(:true)
+    newvalue(:false)
+
+    munge do |value|
+      @resource.munge_boolean(value)
+    end
 
   end
 
   newparam(:arc) do
     desc "Host set to ARC?"
 
-    newvalues(:true, :false)
+    newvalue(:true)
+    newvalue(:false)
+
+    munge do |value|
+      @resource.munge_boolean(value)
+    end
 
   end
 
