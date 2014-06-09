@@ -1,8 +1,8 @@
 require 'fileutils'
 
-lt = "/etc/localtime"
-tz = "/etc/sysconfig/clock"
-zi = "/usr/share/zoneinfo"
+#lt = "/etc/localtime"
+#tz = "/etc/sysconfig/clock"
+#zi = "/usr/share/zoneinfo"
 
 Puppet::Type.type(:timezone).provide(:ruby) do
   desc "Timezone control"
