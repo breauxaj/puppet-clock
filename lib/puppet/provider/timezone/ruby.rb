@@ -9,8 +9,8 @@ Puppet::Type.type(:timezone).provide(:ruby) do
 
   confine :osfamily => :redhat
 
-  confine :exists => lt
-  confine :exists => tz
+  #confine :exists => lt
+  #confine :exists => tz
   
   puts resource[:name]
   puts resource[:utc]
