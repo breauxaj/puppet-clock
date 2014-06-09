@@ -11,6 +11,8 @@ Puppet::Type.type(:timezone).provide(:ruby) do
 
   confine :exists => lt
   confine :exists => tz
+  
+  puts "resource[:name]"
 
   # update the clock file with settings
   if resource[:utc]
