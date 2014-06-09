@@ -1,8 +1,6 @@
 Puppet::Type.newtype(:timezone) do
   @doc = "Configure timezone."
 
-  ensurable
-
   def munge_boolean(value)
     case value
     when true, "true", :true
