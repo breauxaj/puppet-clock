@@ -16,14 +16,14 @@ Puppet::Type.type(:timezone).provide(:ruby) do
   puts resource[:utc]
 
   # update the clock file with settings
-  if resource[:utc]
-    File.open(tz, 'w') { |file| file.write("ZONE=resource[:name]\nUTC=resource[:utc]\n") }
-  else
-    File.open(tz, 'w') { |file| file.write("ZONE=resource[:name]\n") }
-  end
+  #if resource[:utc]
+  #  File.open(tz, 'w') { |file| file.write("ZONE=resource[:name]\nUTC=resource[:utc]\n") }
+  #else
+  #  File.open(tz, 'w') { |file| file.write("ZONE=resource[:name]\n") }
+  #end
 
   # copy the timezone to localtime
-  FileUtils.cd(zi) do
-    FileUtils.cp resource[:name], lt
-  end 
+  #FileUtils.cd(zi) do
+  #  FileUtils.cp resource[:name], lt
+  #end 
 end
