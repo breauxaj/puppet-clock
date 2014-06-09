@@ -37,16 +37,4 @@ Puppet::Type.newtype(:timezone) do
 
   end
 
-  newparam(:arc) do
-    desc "Host set to ARC?"
-
-    newvalue(:true)
-    newvalue(:false)
-
-    munge do |value|
-      @resource.munge_boolean(value)
-    end
-
-  end
-
 end
