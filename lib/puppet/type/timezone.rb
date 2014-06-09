@@ -19,6 +19,8 @@ Puppet::Type.newtype(:timezone) do
       unless value =~ /^[a-z0-9_+-]+(\/[a-z0-9_+-]+)?(\/[a-z0-9_+-]+)?$/i
         raise ArgumentError , "%s is not a valid timezone" % value
       end
+      
+      puts value
     end
 
     isnamevar
@@ -31,7 +33,9 @@ Puppet::Type.newtype(:timezone) do
     newvalues(:true, :false)
 
     munge do |value|
-      #@resource.munge_boolean(value)
+      @resource.munge_boolean(value)
+      
+      puts value
     end
 
   end
