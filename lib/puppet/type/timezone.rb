@@ -28,8 +28,7 @@ Puppet::Type.newtype(:timezone) do
   newparam(:utc) do
     desc "Host set to UTC?"
 
-    newvalue(:true)
-    newvalue(:false)
+    newvalues(:true, :false)
 
     munge do |value|
       @resource.munge_boolean(value)
