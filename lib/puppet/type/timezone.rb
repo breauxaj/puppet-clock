@@ -31,7 +31,7 @@ Puppet::Type.newtype(:timezone) do
     newvalues(:true, :false)
 
     munge do |value|
-      @resource.munge_boolean(value)
+      #@resource.munge_boolean(value)
     end
 
   end
