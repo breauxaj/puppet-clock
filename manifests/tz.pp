@@ -1,3 +1,25 @@
+# Define: clock::tz
+#
+# This define sets the Timezone
+#
+# Parameters:
+#
+#  timezone: 
+#    Set the host timezone
+#
+# Actions:
+#   - Set the timezone
+#
+# Requires:
+#
+# Sample Usage:
+#
+#  For a standard installation, use:
+#
+#    clock::tz { 'default':
+#      timezone => 'America/New_York'
+#    }
+#
 define clock::tz (
   $timezone
 ) {
