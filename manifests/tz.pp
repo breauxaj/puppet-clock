@@ -41,7 +41,7 @@ define clock::tz (
       owner  => 'root', 
       group  => 'root', 
       mode   => '0644', 
-      source => "$prefix/$timezone",
+      source => "${prefix}/${timezone}",
     }
   }
 
