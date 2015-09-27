@@ -9,8 +9,8 @@ Samples
 include clock
 ```
 ```
-timezone { 'America/New_York':
-  utc => false,
+clock::tz { 'default':
+  timezone => 'America/New_York'
 }
 ```
 
